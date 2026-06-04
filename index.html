@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Conversions</title>
+</head>
+
+<body>
+
+    <section id="home">
+        <header>
+            <h1>Unit Conversions</h1>
+        </header>
+
+        <nav>
+            <a href="#temperature"><button>Temperature</button></a>
+            <a href="#weight"><button>Weight</button></a>
+            <a href="#distance"><button>Distance</button></a>
+        </nav>
+    </section>
+
+    <div id="all-conversion-sections">
+
+        <!-- Temperature Conversion -->
+        <section id="temperature">
+            <div id="tmp">
+
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/thermo.png"
+                        width="200px">
+                    <figcaption>Celsius to Fahrenheit Conversion</figcaption>
+                </figure>
+
+                <article>
+                    <fieldset>
+                        <legend>Temperature</legend>
+
+                        <label for="celsius">Celsius</label>
+                        <br>
+
+                        <input type="number" id="celsius">
+                        <br><br>
+
+                        <button id="tempBtn">Convert</button>
+                        <br><br>
+
+                        <input type="number" id="fahrenheit" readonly>
+                        <br>
+
+                        <label for="fahrenheit">Fahrenheit</label>
+                    </fieldset>
+                </article>
+
+                <aside>
+                    To convert Celsius to Fahrenheit yourself, use:
+                    (C × 9/5) + 32
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- Weight Conversion -->
+        <section id="weight">
+            <div id="wgt">
+
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png"
+                        width="200px">
+                    <figcaption>Kilogram to Pound Conversion</figcaption>
+                </figure>
+
+                <article>
+                    <fieldset>
+                        <legend>Weight</legend>
+
+                        <label for="kilo">Kilograms</label>
+                        <br>
+
+                        <input type="number" id="kilo">
+                        <br><br>
+
+                        <button id="weightBtn">Convert</button>
+                        <br><br>
+
+                        <input type="number" id="pounds" readonly>
+                        <br>
+
+                        <label for="pounds">Pounds</label>
+                    </fieldset>
+                </article>
+
+                <aside>
+                    To convert kilograms to pounds yourself, use:
+                    kg × 2.205
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- Distance Conversion -->
+        <section id="distance">
+            <div id="dst">
+
+                <figure>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png"
+                        width="200px">
+                    <figcaption>Kilometer to Mile Conversion</figcaption>
+                </figure>
+
+                <article>
+                    <fieldset>
+                        <legend>Distance</legend>
+
+                        <label for="km">Kilometers</label>
+                        <br>
+
+                        <input type="number" id="km">
+                        <br><br>
+
+                        <button id="distanceBtn">Convert</button>
+                        <br><br>
+
+                        <input type="number" id="miles" readonly>
+                        <br>
+
+                        <label for="miles">Miles</label>
+                    </fieldset>
+                </article>
+
+                <aside>
+                    To convert kilometers to miles yourself, use:
+                    km ÷ 1.609
+                </aside>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Home Button -->
+    <div id="go-home">
+        <a href="#home">
+            <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg"
+                alt="Home">
+        </a>
+    </div>
+
+    <footer>
+        Learn more about HTML as a part of the IBM Fullstack Cloud Developer Certification
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        // Celsius to Fahrenheit
+        document.getElementById("tempBtn").addEventListener("click", function () {
+
+            let celsius = parseFloat(document.getElementById("celsius").value);
+
+            if (!isNaN(celsius)) {
+                let fahrenheit = (celsius * 9 / 5) + 32;
+                document.getElementById("fahrenheit").value = fahrenheit.toFixed(2);
+            }
+        });
+
+        // Kilograms to Pounds
+        document.getElementById("weightBtn").addEventListener("click", function () {
+
+            let kilo = parseFloat(document.getElementById("kilo").value);
+
+            if (!isNaN(kilo)) {
+                let pounds = kilo * 2.205;
+                document.getElementById("pounds").value = pounds.toFixed(2);
+            }
+        });
+
+        // Kilometers to Miles
+        document.getElementById("distanceBtn").addEventListener("click", function () {
+
+            let km = parseFloat(document.getElementById("km").value);
+
+            if (!isNaN(km)) {
+                let miles = km / 1.609;
+                document.getElementById("miles").value = miles.toFixed(2);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
